@@ -1,0 +1,140 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header__logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header__logo a {
+    display: inline-block;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.header__logo a:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.nav__items {
+    display: flex;
+    gap: 30px;
+}
+
+.nav__item a {
+    display: inline-block;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.nav__item a:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.burger {
+    display: none;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.burger span,
+.burger::before,
+.burger::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger span {
+    top: 9px;
+}
+
+.burger::after {
+    bottom: 0;
+}
+
+.burger.open span {
+    opacity: 0;
+}
+
+.burger.open::before {
+    top: 9px;
+    transform: rotate(45deg);
+}
+
+.burger.open::after {
+    bottom: 9px;
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        z-index: 10;
+    }
+
+    .nav.open {
+        right: 0;
+    }
+
+    .nav__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .nav__item a {
+        font-size: 24px;
+    }
+}
