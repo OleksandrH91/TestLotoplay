@@ -4,6 +4,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .header {
@@ -111,8 +112,8 @@ body {
 
     .nav {
         position: fixed;
-        top: 0;
-        right: -100%;
+        top: -1000%;
+        right: 0;
         width: 80%;
         height: 100vh;
         background-color: #1a1a1a;
@@ -124,7 +125,7 @@ body {
     }
 
     .nav.open {
-        right: 0;
+        top: 0;
     }
 
     .nav__items {
